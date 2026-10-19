@@ -1,0 +1,235 @@
+Cabinet: npx vitest run --reporter=verbose (with Supabase test credentials in .env.local)
+Run on 2026-10-19 22:31 UTC, Node v24.15.0, on the code released as v1.0-submission (re-run for the security self-assessment)
+
+(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - ESM syntax in a file loaded as CommonJS (vitest.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+
+ RUN  v5.0.4 C:/Users/Dell Latitude/Desktop/CoverClarity
+
+ ✓ tests/rules-extraction.test.ts > datesIn > reads common UK date formats in order 7ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > q1_off_piste: Will my travel policy cover me if I ski off-piste without a guide? 13ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > q2_medical_excess: What excess do I pay on a medical claim? 6ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > q3_baggage_item_limit: What is the most I can claim for a single item in my baggage? 4ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > q4_laptop_damage_home: Is my laptop covered if I accidentally drop it at home? 3ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > q5_lost_phone: Am I covered if I lose my phone? 2ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > a1_laptop_cafe abstains: Is my laptop covered by my contents policy if it is stolen from a café? 2ms
+ ✓ tests/qa-rules.test.ts > rule-based Q&A on the benchmark questions > a2_car_ncd abstains: What is the no-claims discount on my car insurance? 1ms
+ ✓ tests/qa-rules.test.ts > Q&A safety behaviour > never answers from another policy when scoped to one 3ms
+ ✓ tests/qa-rules.test.ts > Q&A safety behaviour > rejects citations to passages outside the retrieved set, or quotes not in the passage 1ms
+ ✓ tests/qa-rules.test.ts > Q&A safety behaviour > vague questions get a prompt to be specific, not a verdict 0ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > travel.pdf: every ground-truth field is correct, verified, and on the right page 326ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > contents.pdf: every ground-truth field is correct, verified, and on the right page 45ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > gadget.pdf: every ground-truth field is correct, verified, and on the right page 28ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > travel: finds the winter-sports exclusion (p4), off-piste rule (p5) and unpurchased endorsement 75ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > contents: flags the missing PP1 endorsement schedule 40ms
+ ✓ tests/rules-extraction.test.ts > rule-based extraction matches ground truth > gadget: premium is 'included', loss-not-covered exclusion found on p3 29ms
+ ✓ tests/claims.test.ts > understanding what happened (rules) > reads a natural description: what, which item, when, where, and the best policy 6ms
+ ✓ tests/claims.test.ts > understanding what happened (rules) > sends trips and medical problems to travel cover 3ms
+ ✓ tests/claims.test.ts > understanding what happened (rules) > records a break-in only when the description says so 2ms
+ ✓ tests/claims.test.ts > understanding what happened (rules) > never accepts a future or implausible date 1ms
+ ✓ tests/claims.test.ts > only the essential questions > asks about a break-in at home, and about leaving it unattended when out 2ms
+ ✓ tests/claims.test.ts > only the essential questions > skips what the description already answered, and never asks more than five 2ms
+ ✓ tests/claims.test.ts > checking the policy (rules) on the fictional samples > phone stolen from a car: conditional, with the 48-hour police deadline and a cited checklist 11ms
+ ✓ tests/claims.test.ts > checking the policy (rules) on the fictional samples > laptop stolen from a café on contents cover: uncertain, because the PP1 schedule is missing 6ms
+ ✓ tests/claims.test.ts > checking the policy (rules) on the fictional samples > without a date, deadlines are shown without a due date (missing information isn't guessed) 2ms
+ ✓ tests/claims.test.ts > checking the policy (rules) on the fictional samples > never invents a contact: the samples have no claims number, so none is shown 15ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > drops facts with made-up quotes, and keeps verified ones as confirmed 2ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > an uncited statement survives only as an uncertainty 0ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > downgrades the verdict when nothing confirmed supports it, and never lets a promise through 0ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > keeps a deadline only when the quote states that time limit, and works out the due day 1ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > drops contact details that aren't in the quoted wording, wherever they appear 0ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > 'required by your policy' needs a verified quote; otherwise it's only a suggestion 0ms
+ ✓ tests/claims.test.ts > verification keeps out anything that isn't in the user's own wording > re-verifies the same way before saving (days deadlines included) 1ms
+ ✓ tests/claims.test.ts > live AI claim steps (stand-in client) > triage keeps only the user's own policies and plausible dates 7ms
+ ✓ tests/claims.test.ts > live AI claim steps (stand-in client) > the policy check maps sources to pages, and verification removes what doesn't match 5ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-off-piste is short and leads with the conclusion 3ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-medical-excess is short and leads with the conclusion 1ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-baggage-item is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-claim-medical is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-cafe is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-home is short and leads with the conclusion 1ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-bike is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-claim-theft is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-laptop-excess is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-lost-phone is short and leads with the conclusion 1ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-phone-car is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-claim-theft is short and leads with the conclusion 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-off-piste is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-medical-excess is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-baggage-item is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-claim-medical is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-cafe is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-home is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-bike is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-claim-theft is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-laptop-excess is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-lost-phone is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-phone-car is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-claim-theft is about the user's own policy, not insurance in general 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > covers every prepared answer in the critical-facts check 1ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-off-piste keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-medical-excess keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-baggage-item keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > travel-claim-medical keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-cafe keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-laptop-home keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-bike keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > contents-claim-theft keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-laptop-excess keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-lost-phone keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-phone-car keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > gadget-claim-theft keeps the facts that decide the outcome in view 0ms
+ ✓ tests/qa-style.test.ts > prepared Demo answers follow Cabinet's reply style > never guarantees a claim 1ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > q1_off_piste 15ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > q2_medical_excess 8ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > q3_baggage_item_limit 4ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > q4_laptop_damage_home 4ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > q5_lost_phone 2ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > a1_laptop_cafe 3ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > a2_car_ncd 1ms
+ ✓ tests/qa-style.test.ts > rule-based replies are short, specific and honest > names the insurer the way people say it 1ms
+ ✓ tests/qa-style.test.ts > conclusion guard > replaces a conclusion that contradicts the verdict 0ms
+ ✓ tests/qa-style.test.ts > conclusion guard > keeps a specific conclusion that agrees with the verdict 0ms
+ ✓ tests/qa-style.test.ts > helpers > shortens insurer names and speaks amounts 0ms
+ ✓ tests/qa-style.test.ts > live AI instructions and reply handling > tells the model to answer first, briefly, personally and only from the wording 0ms
+ ✓ tests/qa-style.test.ts > live AI instructions and reply handling > gives the model the user's own details: excess, add-ons bought or not 0ms
+ ✓ tests/qa-style.test.ts > live AI instructions and reply handling > keeps long conditions whole and corrects a contradicting conclusion 5ms
+ ✓ tests/qa-style.test.ts > live AI instructions and reply handling > an answer whose quotes don't match the wording is withheld, not shown 1ms
+ ✓ tests/qa-style.test.ts > live AI instructions and reply handling > passes earlier turns for follow-ups, fenced so they can't break out 1ms
+ ✓ tests/pdf.test.ts > parsePdf on fictional samples > travel.pdf: correct page count and clauses on expected pages 200ms
+ ✓ tests/pdf.test.ts > parsePdf on fictional samples > contents.pdf: correct page count and clauses on expected pages 48ms
+ ✓ tests/audit.test.ts > audit checks > flags the travel renewal 20 days away, citing the schedule (p1) 6ms
+ ✓ tests/audit.test.ts > audit checks > does not flag renewals outside the window or without an established date 1ms
+ ✓ tests/audit.test.ts > audit checks > flags the missing PP1 schedule on the contents policy as 'unable to verify', not 'uninsured' 3ms
+ ✓ tests/audit.test.ts > audit checks > drops the missing-document note once a document naming the same reference (PP1) is added to the policy 9ms
+ ✓ tests/audit.test.ts > audit checks > flags winter sports as excluded because the endorsement wasn't purchased (p4 + p1) 2ms
+ ✓ tests/audit.test.ts > audit checks > flags a POSSIBLE laptop overlap between contents and gadget, with positive evidence on both 5ms
+ ✓ tests/audit.test.ts > audit checks > does not report overlap from a single policy or from exclusion wording 4ms
+ ✓ tests/audit.test.ts > audit checks > rule-based material exclusions cite verified wording and skip evidence already used 3ms
+ ✓ tests/audit.test.ts > audit checks > all fingerprints are unique and stable across runs 7ms
+ ✓ tests/demo-mode.test.ts > choosing the mode > is Demo Mode unless the server is explicitly set to live 3ms
+ ✓ tests/demo-mode.test.ts > choosing the mode > starts switchable sites in Demo Mode (outside a request there is no choice, so Demo) 1ms
+ ✓ tests/demo-mode.test.ts > the Anthropic gate > refuses to create a client in Demo Mode, even with an API key set 3ms
+stderr | tests/pdf.test.ts > parsePdf rejects bad input with clear errors > malformed PDF
+Warning: Indexing all PDF objects
+
+ ✓ tests/pdf.test.ts > parsePdf on fictional samples > gadget.pdf: correct page count and clauses on expected pages 24ms
+ ✓ tests/pdf.test.ts > parsePdf rejects bad input with clear errors > non-PDF bytes 3ms
+ ✓ tests/pdf.test.ts > parsePdf rejects bad input with clear errors > malformed PDF 10ms
+ ✓ tests/pdf.test.ts > parsePdf rejects bad input with clear errors > image-only / scanned PDF 11ms
+ ✓ tests/pdf.test.ts > parsePdf rejects bad input with clear errors > over the size limit 2ms
+ ✓ tests/pdf.test.ts > parsePdf rejects bad input with clear errors > over the page limit 6ms
+ ✓ tests/pdf.test.ts > chunkPages > keeps every chunk on a single page and covers all page text 34ms
+ ✓ tests/pdf.test.ts > chunkPages > makes progress on text with no natural break points 0ms
+ ✓ tests/security.test.ts > prompt injection in uploaded documents > instructions aimed at software are recognised; ordinary policy wording is not 5ms
+ ✓ tests/demo-mode.test.ts > the Anthropic gate > is the only place in the app that can create an Anthropic client, and every AI call goes through it 131ms
+ ✓ tests/demo-mode.test.ts > the Anthropic gate > control: in Live AI Mode a real SDK call does reach the trap, so a count of zero means zero 44ms
+ ✓ tests/demo-mode.test.ts > prepared readings of the fictional samples > travel: recognised, verified against the PDF, and matches the ground truth 33ms
+ ✓ tests/demo-mode.test.ts > prepared readings of the fictional samples > contents: recognised, verified against the PDF, and matches the ground truth 3ms
+ ✓ tests/demo-mode.test.ts > prepared readings of the fictional samples > gadget: recognised, verified against the PDF, and matches the ground truth 2ms
+ ✓ tests/demo-mode.test.ts > prepared readings of the fictional samples > leaves any other document to the rule-based reader 2ms
+ ✓ tests/demo-mode.test.ts > prepared answers > travel-off-piste: every quote is found in the sample and verifies 3ms
+ ✓ tests/demo-mode.test.ts > prepared answers > travel-medical-excess: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > travel-baggage-item: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > travel-claim-medical: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > contents-laptop-cafe: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > contents-laptop-home: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > contents-bike: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > contents-claim-theft: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > gadget-laptop-excess: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > gadget-lost-phone: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > gadget-phone-car: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > gadget-claim-theft: every quote is found in the sample and verifies 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > recognises everyday wording, across the whole wallet 5ms
+ ✓ tests/demo-mode.test.ts > prepared answers > says plainly that the demo is limited for anything else, and suggests prepared questions 1ms
+ ✓ tests/demo-mode.test.ts > prepared answers > doesn't answer about a sample that isn't in the question's scope 0ms
+ ✓ tests/demo-mode.test.ts > prepared answers > suggests the prepared questions for the policies in view 1ms
+ ✓ tests/demo-mode.test.ts > zero Anthropic calls > not one request reached the trap or Anthropic's API outside the Live AI control test 0ms
+ ✓ tests/verify.test.ts > verifyQuote > verifies a quote on the claimed page, ignoring whitespace and case 3ms
+ ✓ tests/verify.test.ts > verifyQuote > corrects the page when the quote is on a different page 1ms
+ ✓ tests/verify.test.ts > verifyQuote > rejects quotes that are not in the document 0ms
+ ✓ tests/verify.test.ts > verifyQuote > rejects missing or too-short quotes 0ms
+ ✓ tests/verify.test.ts > verifyQuote > normalises curly quotes and dashes 0ms
+ ✓ tests/verify.test.ts > value-in-quote checks > amounts 26ms
+ ✓ tests/verify.test.ts > value-in-quote checks > dates 2ms
+ ✓ tests/verify.test.ts > value-in-quote checks > currency 0ms
+ ✓ tests/verify.test.ts > verifyExtraction > accepts a value supported by a verified quote 1ms
+ ✓ tests/verify.test.ts > verifyExtraction > flags a value that is not in its quote (hallucinated number) 1ms
+ ✓ tests/verify.test.ts > verifyExtraction > flags a fabricated quote 0ms
+ ✓ tests/verify.test.ts > verifyExtraction > drops malformed dates instead of guessing 0ms
+ ✓ tests/verify.test.ts > verifyExtraction > keeps not-found fields as null 0ms
+ ✓ tests/verify.test.ts > maskPolicyNumber > keeps only the last four characters 0ms
+ ✓ tests/security.test.ts > prompt injection in uploaded documents > they are removed as soon as a PDF is read, so no engine sees them 195ms
+ ✓ tests/security.test.ts > prompt injection in uploaded documents > even a model that 'obeys' planted text can't get an answer shown: the quote no longer exists 29ms
+ ✓ tests/security.test.ts > the AI can't give itself more permissions > no AI call is made with tools: the model can only return text in a fixed shape 6ms
+ ✓ tests/security.test.ts > the AI can't give itself more permissions > model output can't point at another user's policy, invent contacts or promise payment 3ms
+ ✓ tests/security.test.ts > the AI can't give itself more permissions > server code makes no outbound calls of its own (only the Supabase client and the Anthropic SDK) 29ms
+stderr | tests/security.test.ts > safe errors > only user-facing messages reach the browser; internal errors become a generic message
+[api] unexpected Error
+
+ ✓ tests/headers.test.ts > security headers > every page and API response gets the browser protections 3ms
+ ✓ tests/headers.test.ts > security headers > API responses are never cached 1ms
+ ✓ tests/headers.test.ts > security headers > the framework doesn't advertise itself 0ms
+ ✓ tests/redaction.test.ts > redactMetadata > keeps only allowlisted, identifier-like values 2ms
+ ✓ tests/redaction.test.ts > redactMetadata > drops free text even under an allowlisted key 0ms
+ ✓ tests/security.test.ts > safe errors > only user-facing messages reach the browser; internal errors become a generic message 6ms
+ ✓ tests/security.test.ts > safe errors > every API route sends errors through the safe helper 17ms
+ ✓ tests/security.test.ts > safe errors > the log keeps only allowlisted, identifier-like metadata 0ms
+ ✓ tests/review.test.ts > buildReviewedPolicy > keeps machine evidence for unedited values 8ms
+ ✓ tests/review.test.ts > buildReviewedPolicy > marks user edits and drops machine evidence for them, preserving the machine value 1ms
+ ✓ tests/review.test.ts > buildReviewedPolicy > only keeps list items the user ticked, and never keeps unverified quotes as evidence 1ms
+ ✓ tests/review.test.ts > ReviewSubmission validation > rejects an end date before the start date 1ms
+ ✓ tests/review.test.ts > ReviewSubmission validation > rejects bad currency codes and impossible dates 0ms
+ ✓ tests/review.test.ts > ReviewSubmission validation > turns empty text into null 0ms
+ ✓ tests/review.test.ts > ReviewSubmission validation > rejects negative amounts 0ms
+ ✓ tests/review.test.ts > adding straight to the wallet after upload > uses every value Cabinet read and keeps every list item 0ms
+ ✓ tests/review.test.ts > adding straight to the wallet after upload > leaves a value blank rather than saving one that doesn't make sense 0ms
+ ✓ tests/review.test.ts > adding straight to the wallet after upload > records that the policy was added automatically, not checked by the person 0ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > owner can read their own rows and file 301ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > another user sees zero rows in every table 588ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > another user cannot download or list the owner's PDF 183ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > another user cannot write into the owner's folder or rows 274ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > a user cannot link their row to another user's document 45ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > full-text search never returns another user's passages 117ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > another user cannot post into the owner's Q&A thread 49ms
+ ✓ tests/deletion.test.ts > deletePolicy > removes everything derived from the policy and nothing else 1425ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > another user cannot change the owner's findings or attach tasks to them 171ms
+ ✓ tests/deletion.test.ts > deletePolicy > logs the deletion with ids and counts only 85ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > a signed-out visitor gets nothing 233ms
+ ✓ tests/rls.test.ts > tenant isolation (RLS + private storage) > the original document is unchanged after the attacks 55ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > Reset demo restores the three fictional policies, read from prepared readings 7008ms
+ ✓ tests/security.test.ts > security against the real database > the execution log can't be edited or erased by its owner 479ms
+ ✓ tests/security.test.ts > security against the real database > cross-user attempts through the app's own operations are refused 580ms
+ ✓ tests/security.test.ts > security against the real database > refused requests are recorded as authorisation decisions, with the reason only 225ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > describe → check cover → answer questions → review → confirm → save → return 2605ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > missing information: the policy isn't checked until the essential questions are answered 0ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > uncertain cover is said plainly, never as a yes 536ms
+ ✓ tests/security.test.ts > security against the real database > cost control: over the daily AI cap, Live mode quietly uses the free engine and never calls the AI 1582ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > a tampered summary is checked again on save: invented wording and contacts are not stored 1119ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > cross-user isolation: another user can't see, change, delete or attach to someone else's claim 824ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > failed operations: a failed save leaves nothing behind and is logged as failed 1537ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > failed operations: when the live AI errors, the user gets a clear message and nothing is saved 1037ms
+ ✓ tests/security.test.ts > security against the real database > rate limits: the 11th question in a minute is refused 5312ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > resetting again starts from a clean slate (no duplicates) 8609ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > prepared questions get cited, verified answers 716ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > failed operations: when the live AI is unavailable, the check falls back to the rule-based reader 2235ms
+ ✓ tests/security.test.ts > security against the real database > a policy with planted instructions is cleaned on upload, and the clean-up is logged 1580ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > unsupported questions are told the demo is limited, not given a made-up answer 815ms
+ ✓ tests/security.test.ts > security against the real database > uploads: wrong type and oversize are refused before anything is stored 134ms
+ ✓ tests/security.test.ts > security against the real database > the log of a question carries no question text, names or policy numbers 261ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > the coverage review runs on rule-based checks and finds the winter sports gap 1199ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > adding the missing PP1 schedule to the contents policy clears its 'A document is missing' note 1923ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > evidence is kept privately with the claim file, checked, viewable, and removable 4280ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > details can be edited (deadline dates follow), and a re-check keeps the user's progress 1462ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > your own (non-sample) PDF is read by the free rule-based reader 2197ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > Reset demo is refused outside Demo Mode 2ms
+ ✓ tests/demo-workflows.test.ts > Demo Mode workflows make zero Anthropic calls > …and across all of that, not one call to the Anthropic API 0ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > Ask about a claim file keeps its own conversation, and only for its owner 1071ms
+ ✓ tests/claims-db.test.ts > claims preparation (real database) > deleting a claim file removes its evidence files from storage 2100ms
+
+ Test Files  16 passed (16)
+      Tests  214 passed (214)
+   Start at  23:31:31
+   Duration  27.87s (tests 91%, import 8%, transform 1%)
+

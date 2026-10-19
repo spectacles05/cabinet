@@ -2,7 +2,7 @@
 
 **A filing cabinet for your insurance. Upload your policies once, and Cabinet answers questions about them, checks them for gaps and double cover, and helps you put a claim together, with every answer backed by a quote from your own policy.**
 
-[Live app](https://coverclarity.vercel.app) · [Technical documentation](submission/technical-documentation.md) ([PDF](submission/technical-documentation.pdf)) · [Architecture diagram](submission/architecture.svg)
+[Live app](https://coverclarity.vercel.app) · [Technical documentation](submission/technical-documentation.md) ([PDF](submission/technical-documentation.pdf)) · [Security self-assessment](submission/security-self-assessment.md) ([PDF](submission/security-self-assessment.pdf)) · [Architecture diagram](submission/architecture.svg)
 
 Built for the **2026 Shenzhen FinTechathon, International Track, Topic D: Insurance Assistant**. The live site's address uses `coverclarity`, which was Cabinet's working name.
 
@@ -214,11 +214,12 @@ docs/                 the original product brief and project notes
 - The activity log only stores ids and counts, never policy text, names or questions. It can be added to, but not edited or deleted.
 - Cabinet gives information, not insurance advice, and never promises a claim will be paid.
 
-Section 7 of the [technical documentation](submission/technical-documentation.md) has the details. Section 10 lists the limits, and what isn't finished or tested yet.
+Section 7 of the [technical documentation](submission/technical-documentation.md) has the details, and section 10 lists the limits and what isn't finished or tested yet. The [security self-assessment](submission/security-self-assessment.md) covers the permission levels, every security test and its result, the risks that are still open, and regulation.
 
 ## Documentation
 
 - [Technical documentation](submission/technical-documentation.md) ([PDF](submission/technical-documentation.pdf)): architecture, how each feature works, security, and test status
+- [Security self-assessment](submission/security-self-assessment.md) ([PDF](submission/security-self-assessment.pdf)): permission levels, what we tested and the results, problems we fixed, known risks and regulation
 - [System architecture diagram](submission/architecture.svg) and [how every answer gets checked](submission/ai-pipeline.svg)
 - [Test results and a sample activity log](submission/evidence)
 - [Original product brief](docs/PRODUCT_SPEC.md)

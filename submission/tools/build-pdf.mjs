@@ -131,6 +131,8 @@ function renderBlocks(lines) {
 }
 
 const md = readFileSync(input, "utf8").replace(/\r\n/g, "\n");
+// The footer names the document from its first heading, e.g. "Cabinet: Technical Documentation".
+const docName = (md.match(/^# (.+)$/m)?.[1] ?? "Cabinet").replace(/: /, " · ");
 const body = renderBlocks(md.split("\n"));
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(title)}</title><style>
   @page { size: A4; margin: 16mm 15mm 18mm; }
@@ -170,7 +172,7 @@ try {
     printBackground: true,
     displayHeaderFooter: true,
     headerTemplate: "<span></span>",
-    footerTemplate: `<div style="width:100%;font-family:Segoe UI,Arial,sans-serif;font-size:7.5pt;color:#8f939b;padding:0 15mm;display:flex;justify-content:space-between"><span>Cabinet · Technical documentation · 2026 Shenzhen FinTechathon, Topic D</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
+    footerTemplate: `<div style="width:100%;font-family:Segoe UI,Arial,sans-serif;font-size:7.5pt;color:#8f939b;padding:0 15mm;display:flex;justify-content:space-between"><span>${esc(docName)} · 2026 Shenzhen FinTechathon, Topic D</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
     margin: { top: "16mm", bottom: "18mm", left: "15mm", right: "15mm" },
   });
 } finally {
