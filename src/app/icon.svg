@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 362 362">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2e5cf"/><stop offset="1" stop-color="#d8bd92"/></linearGradient>
+    <linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6c38f"/><stop offset="1" stop-color="#b5843f"/></linearGradient>
+    <path id="f" d="M0 447 Q0 427 20 427 L132 427 C152 427 152 471 176 471 L237 471 Q257 471 257 491 L257 618 Q257 638 237 638 L20 638 Q0 638 0 618 Z"/>
+    <mask id="cm" maskUnits="userSpaceOnUse" x="-60" y="250" width="480" height="480"><rect x="-60" y="250" width="480" height="480" fill="#fff"/><use href="#f" fill="#000" stroke="#000" stroke-width="22" stroke-linejoin="round"/></mask>
+    <mask id="cb" maskUnits="userSpaceOnUse" x="-60" y="250" width="480" height="480"><rect x="-60" y="250" width="480" height="480" fill="#fff"/><rect x="67" y="375" width="230" height="221" rx="20" fill="#000" stroke="#000" stroke-width="20"/><use href="#f" fill="#000" stroke="#000" stroke-width="22" stroke-linejoin="round"/></mask>
+  </defs>
+  <g transform="translate(10 -351) skewY(12.5)">
+    <rect x="117" y="342" width="225" height="196" rx="20" fill="url(#b)" mask="url(#cb)"/>
+    <rect x="67" y="375" width="230" height="221" rx="20" fill="url(#m)" mask="url(#cm)"/>
+    <use href="#f" fill="#26272b"/>
+  </g>
+</svg>

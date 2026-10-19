@@ -1,0 +1,296 @@
+{
+  "_note": "Expected results for the FICTIONAL sample PDFs. Page numbers are 1-indexed PDF pages. Used by automated tests and the demo script.",
+  "documents": {
+    "travel.pdf": {
+      "pageCount": 6,
+      "fields": {
+        "policy_type": {
+          "value": "travel",
+          "page": 1
+        },
+        "insurer": {
+          "value": "Harbourlight Travel Insurance (Fictional) Ltd",
+          "page": 1
+        },
+        "policy_number": {
+          "value": "HLT-2025-884213",
+          "page": 1
+        },
+        "start_date": {
+          "value": "2025-11-03",
+          "page": 1
+        },
+        "end_date": {
+          "value": "2026-11-02",
+          "page": 1
+        },
+        "renewal_date": {
+          "value": "2026-11-03",
+          "page": 1
+        },
+        "premium_amount": {
+          "value": 84.0,
+          "page": 1
+        },
+        "premium_frequency": {
+          "value": "annual",
+          "page": 1
+        },
+        "currency": {
+          "value": "GBP",
+          "page": 1
+        },
+        "excess_amount": {
+          "value": 75,
+          "page": 1
+        }
+      },
+      "keyClauses": [
+        {
+          "id": "winter_sports_exclusion",
+          "page": 4,
+          "mustContain": "unless the Winter Sports Endorsement is shown as PURCHASED"
+        },
+        {
+          "id": "off_piste_without_guide",
+          "page": 5,
+          "mustContain": "Off-piste skiing or snowboarding without a qualified guide or instructor is not covered"
+        },
+        {
+          "id": "winter_sports_not_purchased",
+          "page": 1,
+          "mustContain": "NOT PURCHASED"
+        },
+        {
+          "id": "baggage_single_item",
+          "page": 2,
+          "mustContain": "GBP 300"
+        }
+      ]
+    },
+    "contents.pdf": {
+      "pageCount": 5,
+      "fields": {
+        "policy_type": {
+          "value": "contents",
+          "page": 1
+        },
+        "insurer": {
+          "value": "Kestrel Home Insurance (Fictional) plc",
+          "page": 1
+        },
+        "policy_number": {
+          "value": "KHC-7731-0092",
+          "page": 1
+        },
+        "start_date": {
+          "value": "2026-09-15",
+          "page": 1
+        },
+        "end_date": {
+          "value": "2027-09-14",
+          "page": 1
+        },
+        "renewal_date": {
+          "value": "2027-09-15",
+          "page": 1
+        },
+        "premium_amount": {
+          "value": 8.5,
+          "page": 1
+        },
+        "premium_frequency": {
+          "value": "monthly",
+          "page": 1
+        },
+        "currency": {
+          "value": "GBP",
+          "page": 1
+        },
+        "excess_amount": {
+          "value": 100,
+          "page": 1
+        }
+      },
+      "keyClauses": [
+        {
+          "id": "laptop_at_home",
+          "page": 2,
+          "mustContain": "single article limit of GBP 1,500"
+        },
+        {
+          "id": "away_from_home_exclusion",
+          "page": 3,
+          "mustContain": "unless Personal Possessions cover applies under Endorsement Schedule PP1"
+        },
+        {
+          "id": "other_insurance_contents",
+          "page": 5,
+          "mustContain": "proportionate share"
+        }
+      ]
+    },
+    "gadget.pdf": {
+      "pageCount": 4,
+      "fields": {
+        "policy_type": {
+          "value": "gadget",
+          "page": 1
+        },
+        "insurer": {
+          "value": "Orbit Gadget Cover (Fictional) Ltd",
+          "page": 1
+        },
+        "policy_number": {
+          "value": "OGC-55-201477",
+          "page": 1
+        },
+        "start_date": {
+          "value": "2026-07-01",
+          "page": 1
+        },
+        "end_date": {
+          "value": null,
+          "note": "rolling monthly, no fixed end date"
+        },
+        "renewal_date": {
+          "value": null,
+          "note": "rolling monthly"
+        },
+        "premium_amount": {
+          "value": null,
+          "note": "included in a GBP 18 bank account fee that also covers other benefits; no gadget-only premium"
+        },
+        "currency": {
+          "value": "GBP",
+          "page": 1
+        },
+        "excess_amount": {
+          "value": 50,
+          "page": 1,
+          "note": "laptop excess; smartphone excess is GBP 75",
+          "acceptAmbiguous": true
+        }
+      },
+      "keyClauses": [
+        {
+          "id": "accidental_damage_home",
+          "page": 2,
+          "mustContain": "including inside your home"
+        },
+        {
+          "id": "loss_not_covered",
+          "page": 3,
+          "mustContain": "losing or misplacing a gadget is not covered"
+        },
+        {
+          "id": "other_insurance_gadget",
+          "page": 4,
+          "mustContain": "proportionate share"
+        }
+      ]
+    }
+  },
+  "questions": [
+    {
+      "id": "q1_off_piste",
+      "scope": "travel.pdf",
+      "question": "Will my travel policy cover me if I ski off-piste without a guide?",
+      "expectedAssessment": "excluded",
+      "expectedCitationPages": [
+        4,
+        5
+      ],
+      "rationale": "Winter Sports Endorsement NOT PURCHASED (p1) so exclusion 4.7 applies (p4); even with the endorsement, off-piste without a guide is never covered (p5)."
+    },
+    {
+      "id": "q2_medical_excess",
+      "scope": "travel.pdf",
+      "question": "What excess do I pay on a medical claim?",
+      "expectedAssessment": "information",
+      "expectedAnswerContains": "75",
+      "expectedCitationPages": [
+        1
+      ]
+    },
+    {
+      "id": "q3_baggage_item_limit",
+      "scope": "travel.pdf",
+      "question": "What is the most I can claim for a single item in my baggage?",
+      "expectedAssessment": "information",
+      "expectedAnswerContains": "300",
+      "expectedCitationPages": [
+        2
+      ]
+    },
+    {
+      "id": "q4_laptop_damage_home",
+      "scope": "contents.pdf",
+      "question": "Is my laptop covered if I accidentally drop it at home?",
+      "expectedAssessment": "covered",
+      "expectedAnswerContains": "1,500",
+      "expectedCitationPages": [
+        2
+      ],
+      "rationale": "Accidental damage (home) is INCLUDED in the schedule (p1); A2 covers accidental damage to laptops at home (p2); A3 single article limit GBP 1,500 (p2)."
+    },
+    {
+      "id": "q5_lost_phone",
+      "scope": "gadget.pdf",
+      "question": "Am I covered if I lose my phone?",
+      "expectedAssessment": "excluded",
+      "expectedCitationPages": [
+        3
+      ]
+    }
+  ],
+  "abstentionQuestions": [
+    {
+      "id": "a1_laptop_cafe",
+      "scope": "contents.pdf",
+      "question": "Is my laptop covered by my contents policy if it is stolen from a café?",
+      "expectedAssessment": "insufficient_evidence",
+      "rationale": "Away-from-home cover depends on Endorsement Schedule PP1, which is not in the uploaded documents."
+    },
+    {
+      "id": "a2_car_ncd",
+      "scope": "wallet",
+      "question": "What is the no-claims discount on my car insurance?",
+      "expectedAssessment": "insufficient_evidence",
+      "rationale": "No car policy has been uploaded."
+    }
+  ],
+  "expectedInsights": [
+    {
+      "type": "renewal_due",
+      "document": "travel.pdf",
+      "page": 1,
+      "note": "Renewal 3 Nov 2026 — within 30 days of 13–20 Oct 2026."
+    },
+    {
+      "type": "exclusion",
+      "document": "travel.pdf",
+      "page": 4,
+      "note": "Winter sports excluded; endorsement not purchased."
+    },
+    {
+      "type": "possible_overlap",
+      "documents": [
+        "contents.pdf",
+        "gadget.pdf"
+      ],
+      "pages": [
+        2,
+        2
+      ],
+      "note": "Laptop accidental damage at home covered by both; both have proportionate-share clauses."
+    },
+    {
+      "type": "missing_document",
+      "document": "contents.pdf",
+      "page": 1,
+      "note": "Endorsement Schedule PP1 referenced but not uploaded."
+    }
+  ],
+  "_assessments": "covered | excluded | conditional | insufficient_evidence (abstain) | information (factual answer, no cover verdict)"
+}

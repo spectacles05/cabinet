@@ -1,0 +1,284 @@
+{
+ "policy_type": "travel",
+ "policy_type_evidence": {
+  "page": 1,
+  "quote": "Product Annual Multi-Trip Travel Insurance — Europe"
+ },
+ "fields": {
+  "insurer": {
+   "value": "Harbourlight Travel Insurance (Fictional) Ltd",
+   "status": "found",
+   "page": 1,
+   "quote": "Insurer Harbourlight Travel Insurance (Fictional) Ltd",
+   "note": null
+  },
+  "display_name": {
+   "value": "Annual Multi-Trip Travel Insurance — Europe",
+   "status": "found",
+   "page": 1,
+   "quote": "Product Annual Multi-Trip Travel Insurance — Europe",
+   "note": null
+  },
+  "policy_number": {
+   "value": "HLT-2025-884213",
+   "status": "found",
+   "page": 1,
+   "quote": "Policy number HLT-2025-884213",
+   "note": null
+  },
+  "insured": {
+   "value": "Alex Sample",
+   "status": "found",
+   "page": 1,
+   "quote": "Insured persons Alex Sample (age 21)",
+   "note": null
+  },
+  "start_date": {
+   "value": "2025-11-03",
+   "status": "found",
+   "page": 1,
+   "quote": "Period of insurance 3 November 2025 to 2 November 2026 (both dates inclusive)",
+   "note": null
+  },
+  "end_date": {
+   "value": "2026-11-02",
+   "status": "found",
+   "page": 1,
+   "quote": "Period of insurance 3 November 2025 to 2 November 2026 (both dates inclusive)",
+   "note": null
+  },
+  "renewal_date": {
+   "value": "2026-11-03",
+   "status": "found",
+   "page": 1,
+   "quote": "Renewal date 3 November 2026",
+   "note": null
+  },
+  "premium_amount": {
+   "value": 84,
+   "status": "found",
+   "page": 1,
+   "quote": "Annual premium GBP 84.00, paid annually (including Insurance Premium Tax)",
+   "note": null
+  },
+  "premium_frequency": {
+   "value": "annual",
+   "status": "found",
+   "page": 1,
+   "quote": "Annual premium GBP 84.00, paid annually (including Insurance Premium Tax)",
+   "note": null
+  },
+  "currency": {
+   "value": "GBP",
+   "status": "found",
+   "page": 1,
+   "quote": "Annual premium GBP 84.00, paid annually (including Insurance Premium Tax)",
+   "note": null
+  },
+  "excess_amount": {
+   "value": 75,
+   "status": "found",
+   "page": 1,
+   "quote": "Policy excess GBP 75 per insured person, per incident, for each section",
+   "note": "Applies per insured person, per incident, for each section claimed under."
+  }
+ },
+ "limits": [
+  {
+   "label": "Emergency medical expenses (per person, per trip)",
+   "amount": 10000000,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 1 Emergency medical expenses * up to GBP 10,000,000"
+  },
+  {
+   "label": "Cancellation and curtailment",
+   "amount": 3000,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 2 Cancellation and curtailment * up to GBP 3,000"
+  },
+  {
+   "label": "Personal baggage",
+   "amount": 1500,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 3 Personal baggage * up to GBP 1,500"
+  },
+  {
+   "label": "Single article, pair or set limit",
+   "amount": 300,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Single article, pair or set limit GBP 300"
+  },
+  {
+   "label": "Valuables limit (total)",
+   "amount": 250,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Valuables limit (total) GBP 250"
+  },
+  {
+   "label": "Personal money",
+   "amount": 300,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 4 Personal money * up to GBP 300 (cash limit GBP 200)"
+  },
+  {
+   "label": "Cash limit within personal money",
+   "amount": 200,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 4 Personal money * up to GBP 300 (cash limit GBP 200)"
+  },
+  {
+   "label": "Travel delay (GBP 20 per full 12 hours)",
+   "amount": 200,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 5 Travel delay GBP 20 for each full 12 hours, up to GBP 200"
+  },
+  {
+   "label": "Personal liability",
+   "amount": 2000000,
+   "currency": "GBP",
+   "page": 2,
+   "quote": "Section 6 Personal liability up to GBP 2,000,000"
+  }
+ ],
+ "inclusions": [
+  {
+   "summary": "Emergency medical treatment, hospital stays and getting you home if you fall ill or are injured on a trip",
+   "page": 3,
+   "quote": "Section 1. We will pay reasonable and necessary costs for emergency medical treatment, hospital"
+  },
+  {
+   "summary": "Cancelling or cutting short your trip",
+   "page": 2,
+   "quote": "Section 2 Cancellation and curtailment * up to GBP 3,000"
+  },
+  {
+   "summary": "Lost, stolen or damaged personal baggage",
+   "page": 2,
+   "quote": "Section 3 Personal baggage * up to GBP 1,500"
+  },
+  {
+   "summary": "Lost or stolen personal money",
+   "page": 2,
+   "quote": "Section 4 Personal money * up to GBP 300 (cash limit GBP 200)"
+  },
+  {
+   "summary": "Compensation for travel delays",
+   "page": 2,
+   "quote": "Section 5 Travel delay GBP 20 for each full 12 hours, up to GBP 200"
+  },
+  {
+   "summary": "Personal liability if you injure someone or damage their property",
+   "page": 2,
+   "quote": "Section 6 Personal liability up to GBP 2,000,000"
+  }
+ ],
+ "exclusions": [
+  {
+   "summary": "No cover for treatment that can reasonably wait until you get home",
+   "page": 3,
+   "quote": "We will not pay for treatment that can reasonably wait until you return home, or for any claim arising from a"
+  },
+  {
+   "summary": "No cover for pre-existing medical conditions unless declared to and accepted by the insurer in writing",
+   "page": 3,
+   "quote": "pre-existing medical condition that has not been declared to and accepted by us in writing."
+  },
+  {
+   "summary": "No cover for claims arising from being under the influence of alcohol or non-prescribed drugs",
+   "page": 4,
+   "quote": "4.1 Any claim arising from you being under the influence of alcohol or drugs, unless the drugs were"
+  },
+  {
+   "summary": "No cover for travel to places the UK FCDO advises against all or all but essential travel",
+   "page": 4,
+   "quote": "4.2 Travel to a country or area that the UK Foreign, Commonwealth and Development Office advises against"
+  },
+  {
+   "summary": "No cover for professional sports, racing, or activities done for payment",
+   "page": 4,
+   "quote": "4.3 Professional sports, racing of any kind, or any activity undertaken for payment."
+  },
+  {
+   "summary": "No cover for scuba diving deeper than 18 metres or diving without a qualified instructor",
+   "page": 4,
+   "quote": "4.4 Scuba diving deeper than 18 metres, or any diving without a qualified instructor."
+  },
+  {
+   "summary": "No cover for riding a motorcycle or moped over 125cc, or any motorcycle/moped without a helmet",
+   "page": 4,
+   "quote": "4.5 Riding a motorcycle or moped over 125cc, or riding any motorcycle or moped without a helmet."
+  },
+  {
+   "summary": "No cover for wear and tear, gradual deterioration or loss of value",
+   "page": 4,
+   "quote": "4.6 Wear and tear, gradual deterioration or loss of value of any item."
+  },
+  {
+   "summary": "No cover under any section for winter sports (on- or off-piste skiing, snowboarding etc.) because the Winter Sports Endorsement was not purchased",
+   "page": 4,
+   "quote": "4.7 Winter sports. We will not pay any claim under any section arising from you taking part in winter sports,"
+  }
+ ],
+ "conditions": [
+  {
+   "summary": "Each trip must last no longer than 31 days",
+   "page": 1,
+   "quote": "Maximum trip duration 31 days per trip"
+  },
+  {
+   "summary": "A trip must start and end in your home country during the period of insurance",
+   "page": 3,
+   "quote": "Trip: a journey outside your home country that starts and ends in your home country during the period of"
+  },
+  {
+   "summary": "You must contact the emergency assistance line before any in-patient admission or repatriation is arranged",
+   "page": 3,
+   "quote": "accommodation and repatriation if you become ill or are injured during a trip. You must contact our"
+  },
+  {
+   "summary": "The excess (GBP 75) applies per person, per incident, for each section claimed",
+   "page": 1,
+   "quote": "Policy excess GBP 75 per insured person, per incident, for each section"
+  },
+  {
+   "summary": "The policy does not renew automatically; you must tell the insurer you want to renew",
+   "page": 6,
+   "quote": "will not renew automatically unless you tell us you want to renew."
+  },
+  {
+   "summary": "14-day cooling-off period with full refund if you have not travelled or claimed",
+   "page": 6,
+   "quote": "Cooling-off period. You may cancel within 14 days of receiving your policy documents and receive a full"
+  }
+ ],
+ "optional_extensions": [
+  {
+   "name": "Winter Sports Endorsement",
+   "status": "not_purchased",
+   "page": 1,
+   "quote": "Winter Sports Endorsement NOT PURCHASED"
+  },
+  {
+   "name": "Gadget Cover Extension",
+   "status": "not_purchased",
+   "page": 1,
+   "quote": "Gadget Cover Extension NOT PURCHASED"
+  }
+ ],
+ "missing_information": [
+  {
+   "description": "The wording for the Gadget Cover Extension is not included in this document (it was not purchased)",
+   "page": 1,
+   "quote": "Gadget Cover Extension NOT PURCHASED"
+  }
+ ],
+ "plain_english_summary": "This is an annual multi-trip travel insurance policy for Europe from Harbourlight (Fictional), covering Alex Sample from 3 November 2025 to 2 November 2026 for trips of up to 31 days each. It pays for emergency medical treatment (up to GBP 10 million), cancellation, baggage, money, travel delays and personal liability, with a GBP 75 excess per person, per incident, for each section claimed. Winter sports such as skiing and snowboarding are NOT covered at all because the Winter Sports Endorsement was not purchased, and gadget cover was not bought either. Undeclared pre-existing medical conditions, claims involving alcohol or drugs, and risky activities like deep diving or riding large motorbikes are also excluded."
+}

@@ -1,0 +1,50 @@
+{
+  "name": "cabinet",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run",
+    "samples": "tsx scripts/make-sample-pdfs.ts",
+    "db:apply": "tsx scripts/db-apply.ts",
+    "eval:extraction": "tsx --conditions=react-server scripts/eval-extraction.ts",
+    "eval:qa": "tsx --conditions=react-server scripts/eval-qa.ts",
+    "eval:claims": "tsx --conditions=react-server scripts/eval-claims.ts",
+    "test:security": "cross-env REQUIRE_SUPABASE_TESTS=1 vitest run tests/rls.test.ts tests/deletion.test.ts tests/demo-workflows.test.ts",
+    "test:e2e": "next build && playwright test",
+    "evidence:logs": "tsx --conditions=react-server scripts/export-sample-logs.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.3",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "unpdf": "^1.8.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "pdf-lib": "^1.17.1",
+    "pg": "^8.23.1",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.4"
+  }
+}

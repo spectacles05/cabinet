@@ -1,0 +1,600 @@
+{
+  "note": "Genuine execution log of a throwaway test account (fictional sample policies, Demo Mode), exported from Supabase. Metadata is allowlisted at write time; ids relabelled for readability; the account was deleted afterwards.",
+  "exported_at": "2026-10-15T02:55:27.565Z",
+  "runs": [
+    {
+      "run": "run-1",
+      "workflow": "action",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:18.495633+00:00",
+      "completed_at": "2026-10-15T02:55:17.634+00:00",
+      "steps": [
+        {
+          "step": "demo_reset_clear_data",
+          "status": "succeeded",
+          "ms": 379,
+          "metadata": {
+            "app_mode": "demo",
+            "document_count": 0
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-2",
+      "workflow": "ingest",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:19.039635+00:00",
+      "completed_at": "2026-10-15T02:55:18.83+00:00",
+      "steps": [
+        {
+          "step": "register_upload",
+          "status": "succeeded",
+          "ms": 50,
+          "metadata": {
+            "size_bytes": 8855,
+            "document_id": "document-1"
+          }
+        },
+        {
+          "step": "download_private_file",
+          "status": "succeeded",
+          "ms": 268,
+          "metadata": {
+            "size_bytes": 8855,
+            "document_id": "document-1"
+          }
+        },
+        {
+          "step": "hash_file",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "document_id": "document-1",
+            "file_sha256": "7711b55d2b64…"
+          }
+        },
+        {
+          "step": "parse_pdf_pages",
+          "status": "succeeded",
+          "ms": 116,
+          "metadata": {
+            "page_count": 6,
+            "document_id": "document-1",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "store_chunks",
+          "status": "succeeded",
+          "ms": 120,
+          "metadata": {
+            "chunk_count": 6,
+            "document_id": "document-1"
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-3",
+      "workflow": "extract",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:20.335311+00:00",
+      "completed_at": "2026-10-15T02:55:19.46+00:00",
+      "steps": [
+        {
+          "step": "load_document_pages",
+          "status": "succeeded",
+          "ms": 67,
+          "metadata": {
+            "page_count": 6,
+            "document_id": "document-1",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "prepared_demo_reading",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo",
+            "document_id": "document-1",
+            "schema_version": "extract-v2"
+          }
+        },
+        {
+          "step": "verify_evidence",
+          "status": "succeeded",
+          "ms": 15,
+          "metadata": {
+            "document_id": "document-1",
+            "fields_found": 11,
+            "citation_count": 43,
+            "fields_missing": 0,
+            "rejected_citation_count": 0
+          }
+        },
+        {
+          "step": "save_extraction",
+          "status": "succeeded",
+          "ms": 65,
+          "metadata": {
+            "document_id": "document-1"
+          }
+        },
+        {
+          "step": "added_to_wallet",
+          "status": "succeeded",
+          "ms": 196,
+          "metadata": {
+            "document_id": "document-1",
+            "field_count": 11
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-4",
+      "workflow": "ingest",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:21.249735+00:00",
+      "completed_at": "2026-10-15T02:55:20.985+00:00",
+      "steps": [
+        {
+          "step": "register_upload",
+          "status": "succeeded",
+          "ms": 55,
+          "metadata": {
+            "size_bytes": 6423,
+            "document_id": "document-2"
+          }
+        },
+        {
+          "step": "download_private_file",
+          "status": "succeeded",
+          "ms": 263,
+          "metadata": {
+            "size_bytes": 6423,
+            "document_id": "document-2"
+          }
+        },
+        {
+          "step": "hash_file",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "document_id": "document-2",
+            "file_sha256": "0eddfb3985e4…"
+          }
+        },
+        {
+          "step": "parse_pdf_pages",
+          "status": "succeeded",
+          "ms": 14,
+          "metadata": {
+            "page_count": 5,
+            "document_id": "document-2",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "store_chunks",
+          "status": "succeeded",
+          "ms": 85,
+          "metadata": {
+            "chunk_count": 5,
+            "document_id": "document-2"
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-5",
+      "workflow": "extract",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:22.49423+00:00",
+      "completed_at": "2026-10-15T02:55:21.537+00:00",
+      "steps": [
+        {
+          "step": "load_document_pages",
+          "status": "succeeded",
+          "ms": 60,
+          "metadata": {
+            "page_count": 5,
+            "document_id": "document-2",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "prepared_demo_reading",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo",
+            "document_id": "document-2",
+            "schema_version": "extract-v2"
+          }
+        },
+        {
+          "step": "verify_evidence",
+          "status": "succeeded",
+          "ms": 2,
+          "metadata": {
+            "document_id": "document-2",
+            "fields_found": 11,
+            "citation_count": 31,
+            "fields_missing": 0,
+            "rejected_citation_count": 0
+          }
+        },
+        {
+          "step": "save_extraction",
+          "status": "succeeded",
+          "ms": 52,
+          "metadata": {
+            "document_id": "document-2"
+          }
+        },
+        {
+          "step": "added_to_wallet",
+          "status": "succeeded",
+          "ms": 177,
+          "metadata": {
+            "document_id": "document-2",
+            "field_count": 11
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-6",
+      "workflow": "ingest",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:23.300694+00:00",
+      "completed_at": "2026-10-15T02:55:23.175+00:00",
+      "steps": [
+        {
+          "step": "register_upload",
+          "status": "succeeded",
+          "ms": 42,
+          "metadata": {
+            "size_bytes": 4990,
+            "document_id": "document-3"
+          }
+        },
+        {
+          "step": "download_private_file",
+          "status": "succeeded",
+          "ms": 349,
+          "metadata": {
+            "size_bytes": 4990,
+            "document_id": "document-3"
+          }
+        },
+        {
+          "step": "hash_file",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "document_id": "document-3",
+            "file_sha256": "6a6663bef510…"
+          }
+        },
+        {
+          "step": "parse_pdf_pages",
+          "status": "succeeded",
+          "ms": 11,
+          "metadata": {
+            "page_count": 4,
+            "document_id": "document-3",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "store_chunks",
+          "status": "succeeded",
+          "ms": 84,
+          "metadata": {
+            "chunk_count": 4,
+            "document_id": "document-3"
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-7",
+      "workflow": "extract",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:24.668894+00:00",
+      "completed_at": "2026-10-15T02:55:23.719+00:00",
+      "steps": [
+        {
+          "step": "load_document_pages",
+          "status": "succeeded",
+          "ms": 56,
+          "metadata": {
+            "page_count": 4,
+            "document_id": "document-3",
+            "instructions_removed": 0
+          }
+        },
+        {
+          "step": "prepared_demo_reading",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo",
+            "document_id": "document-3",
+            "schema_version": "extract-v2"
+          }
+        },
+        {
+          "step": "verify_evidence",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "document_id": "document-3",
+            "fields_found": 7,
+            "citation_count": 23,
+            "fields_missing": 4,
+            "rejected_citation_count": 0
+          }
+        },
+        {
+          "step": "save_extraction",
+          "status": "succeeded",
+          "ms": 58,
+          "metadata": {
+            "document_id": "document-3"
+          }
+        },
+        {
+          "step": "added_to_wallet",
+          "status": "succeeded",
+          "ms": 177,
+          "metadata": {
+            "document_id": "document-3",
+            "field_count": 8
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-8",
+      "workflow": "qa",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:25.680214+00:00",
+      "completed_at": "2026-10-15T02:55:24.726+00:00",
+      "steps": [
+        {
+          "step": "retrieve_user_chunks",
+          "status": "succeeded",
+          "ms": 44,
+          "metadata": {
+            "policy_id": "wallet",
+            "retrieved_chunk_count": 15
+          }
+        },
+        {
+          "step": "prepared_demo_answer",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo",
+            "completed": true
+          }
+        },
+        {
+          "step": "verify_citations",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "assessment": "excluded",
+            "citation_count": 5,
+            "condition_count": 1,
+            "reply_word_count": 52,
+            "rejected_citation_count": 0
+          }
+        },
+        {
+          "step": "save_conversation",
+          "status": "succeeded",
+          "ms": 101,
+          "metadata": {
+            "thread_id": "thread-1"
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-9",
+      "workflow": "audit",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:26.392552+00:00",
+      "completed_at": "2026-10-15T02:55:25.815+00:00",
+      "steps": [
+        {
+          "step": "load_confirmed_policies",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "app_mode": "demo",
+            "input_hash": "64c99de950f8a19d4b01235a619efb5eeb621037e43cb16c2daf98ebf6ffc753",
+            "policy_count": 3
+          }
+        },
+        {
+          "step": "load_policy_text",
+          "status": "succeeded",
+          "ms": 49,
+          "metadata": {
+            "retrieved_chunk_count": 15
+          }
+        },
+        {
+          "step": "deterministic_checks",
+          "status": "succeeded",
+          "ms": 5,
+          "metadata": {
+            "insight_count": 4,
+            "schema_version": "audit-v3"
+          }
+        },
+        {
+          "step": "rule_based_material_exclusions",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "model": "rules-audit-v1",
+            "app_mode": "demo",
+            "insight_count": 3
+          }
+        },
+        {
+          "step": "save_findings",
+          "status": "succeeded",
+          "ms": 406,
+          "metadata": {
+            "insight_count": 7,
+            "new_insight_count": 7
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-10",
+      "workflow": "claim",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:27.375772+00:00",
+      "completed_at": "2026-10-15T02:55:26.229+00:00",
+      "steps": [
+        {
+          "step": "understand_incident_rules",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo",
+            "incident_type": "theft"
+          }
+        },
+        {
+          "step": "choose_questions",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "policy_id": "policy-1",
+            "policy_count": 3,
+            "question_count": 2
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-11",
+      "workflow": "claim",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:27.842376+00:00",
+      "completed_at": "2026-10-15T02:55:26.781+00:00",
+      "steps": [
+        {
+          "step": "load_policy_wording",
+          "status": "succeeded",
+          "ms": 51,
+          "metadata": {
+            "policy_id": "policy-1",
+            "chunk_count": 4
+          }
+        },
+        {
+          "step": "check_policy_rules",
+          "status": "succeeded",
+          "ms": 4,
+          "metadata": {
+            "model": "demo-prepared-v1",
+            "app_mode": "demo"
+          }
+        },
+        {
+          "step": "verify_claim_evidence",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "verdict": "conditional",
+            "fact_count": 2,
+            "contact_count": 0,
+            "dropped_count": 0,
+            "deadline_count": 2,
+            "checklist_count": 3
+          }
+        },
+        {
+          "step": "await_user_confirmation",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "completed": false
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-12",
+      "workflow": "claim",
+      "status": "succeeded",
+      "started_at": "2026-10-15T02:55:28.309571+00:00",
+      "completed_at": "2026-10-15T02:55:27.194+00:00",
+      "steps": [
+        {
+          "step": "user_confirmed_summary",
+          "status": "succeeded",
+          "ms": 0,
+          "metadata": {
+            "completed": true,
+            "policy_id": "policy-1"
+          }
+        },
+        {
+          "step": "verify_claim_evidence",
+          "status": "succeeded",
+          "ms": 1,
+          "metadata": {
+            "fact_count": 2,
+            "dropped_count": 0,
+            "checklist_count": 3
+          }
+        },
+        {
+          "step": "save_claim",
+          "status": "succeeded",
+          "ms": 44,
+          "metadata": {
+            "claim_id": "claim-1"
+          }
+        }
+      ]
+    },
+    {
+      "run": "run-13",
+      "workflow": "action",
+      "status": "failed",
+      "started_at": "2026-10-15T02:55:28.589369+00:00",
+      "completed_at": "2026-10-15T02:55:27.31+00:00",
+      "steps": [
+        {
+          "step": "authorise_request",
+          "status": "failed",
+          "ms": 0,
+          "metadata": {
+            "error_code": "not_found",
+            "denied_reason": "not_found"
+          }
+        }
+      ]
+    }
+  ]
+}

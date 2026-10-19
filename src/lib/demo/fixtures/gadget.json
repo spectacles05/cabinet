@@ -1,0 +1,178 @@
+{
+ "policy_type": "gadget",
+ "policy_type_evidence": {
+  "page": 1,
+  "quote": "Gadget Insurance Schedule"
+ },
+ "fields": {
+  "insurer": {
+   "value": "Orbit Gadget Cover (Fictional) Ltd",
+   "status": "found",
+   "page": 1,
+   "quote": "Insurer Orbit Gadget Cover (Fictional) Ltd",
+   "note": null
+  },
+  "display_name": {
+   "value": "Gadget Insurance — Meridian Account Plus benefit",
+   "status": "found",
+   "page": 1,
+   "quote": "Product Gadget Insurance — Meridian Account Plus benefit",
+   "note": null
+  },
+  "policy_number": {
+   "value": "OGC-55-201477",
+   "status": "found",
+   "page": 1,
+   "quote": "Policy reference OGC-55-201477",
+   "note": null
+  },
+  "insured": {
+   "value": "Alex Sample",
+   "status": "found",
+   "page": 1,
+   "quote": "Account holder Alex Sample",
+   "note": null
+  },
+  "start_date": {
+   "value": "2026-07-01",
+   "status": "found",
+   "page": 1,
+   "quote": "Cover start date 1 July 2026",
+   "note": null
+  },
+  "end_date": {
+   "value": null,
+   "status": "not_found",
+   "page": null,
+   "quote": null,
+   "note": "No fixed end date is stated. The schedule says cover is rolling monthly while the account remains open, and it ends automatically if the account is closed or downgraded."
+  },
+  "renewal_date": {
+   "value": null,
+   "status": "not_found",
+   "page": null,
+   "quote": null,
+   "note": "No renewal date is stated. Cover rolls on monthly while the Meridian Current Account Plus remains open."
+  },
+  "premium_amount": {
+   "value": null,
+   "status": "found",
+   "page": 1,
+   "quote": "Cost Included in the GBP 18.00 monthly account fee (the fee also",
+   "note": "There is no separate premium. Cover is bundled into the GBP 18.00 monthly packaged bank account fee, which also pays for other account benefits."
+  },
+  "premium_frequency": {
+   "value": "included",
+   "status": "found",
+   "page": 1,
+   "quote": "Cost Included in the GBP 18.00 monthly account fee (the fee also",
+   "note": "The cost is included in the monthly packaged account fee."
+  },
+  "currency": {
+   "value": "GBP",
+   "status": "found",
+   "page": 1,
+   "quote": "Maximum per gadget GBP 2,000",
+   "note": null
+  },
+  "excess_amount": {
+   "value": 50,
+   "status": "ambiguous",
+   "page": 1,
+   "quote": "Excess GBP 50 per claim for laptops; GBP 75 per claim for",
+   "note": "The excess depends on the gadget. It is GBP 50 per claim for laptops and GBP 75 per claim for smartphones."
+  }
+ },
+ "limits": [
+  {
+   "label": "Maximum paid per gadget",
+   "amount": 2000,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "Maximum per gadget GBP 2,000"
+  },
+  {
+   "label": "Excess per claim for laptops",
+   "amount": 50,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "Excess GBP 50 per claim for laptops"
+  },
+  {
+   "label": "Excess per claim for smartphones",
+   "amount": 75,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "GBP 75 per claim for"
+  }
+ ],
+ "inclusions": [
+  {
+   "summary": "Theft of a registered gadget is covered anywhere in the world, including from your home.",
+   "page": 2,
+   "quote": "1.1 Theft of a registered gadget, anywhere in the world, including from your home."
+  },
+  {
+   "summary": "Accidental damage to a registered gadget is covered anywhere in the world, including inside your home.",
+   "page": 2,
+   "quote": "1.2 Accidental damage to a registered gadget, anywhere in the world, including inside your home."
+  },
+  {
+   "summary": "Breakdown of a registered gadget is covered, but only after the manufacturer's warranty has expired.",
+   "page": 2,
+   "quote": "1.3 Breakdown of a registered gadget after the manufacturer's warranty has expired."
+  },
+  {
+   "summary": "The insurer will repair or replace your gadget, up to the maximum per gadget, after taking off the excess.",
+   "page": 2,
+   "quote": "1.4 We will repair or replace your gadget, up to the maximum per gadget shown in your schedule, after"
+  }
+ ],
+ "exclusions": [
+  {
+   "summary": "Losing or misplacing a gadget is not covered. Only theft is covered.",
+   "page": 3,
+   "quote": "2.1 Loss of a gadget. Only theft is covered; losing or misplacing a gadget is not covered."
+  },
+  {
+   "summary": "Theft from an unattended vehicle is not covered unless the gadget was hidden in a locked boot or glove compartment and there is evidence of forced entry.",
+   "page": 3,
+   "quote": "2.2 Theft from an unattended vehicle unless the gadget was hidden in a locked boot or glove compartment"
+  },
+  {
+   "summary": "Cosmetic damage, such as scratches or dents that do not affect how the gadget works, is not covered.",
+   "page": 3,
+   "quote": "2.3 Cosmetic damage such as scratches or dents that do not affect how the gadget works."
+  },
+  {
+   "summary": "Theft is not covered if the gadget was left unattended in a public place.",
+   "page": 3,
+   "quote": "2.4 Theft where the gadget was left unattended in a public place."
+  },
+  {
+   "summary": "Theft claims are not covered if the theft was not reported to the police within 48 hours.",
+   "page": 3,
+   "quote": "2.5 Any claim where the theft was not reported to the police within 48 hours."
+  }
+ ],
+ "conditions": [
+  {
+   "summary": "You must tell the insurer about any other insurance covering the same gadget, such as home contents insurance. The insurer will then only pay its proportionate share of a claim.",
+   "page": 4,
+   "quote": "3.1 Other insurance. If you have other insurance that covers the same gadget, for example home contents"
+  },
+  {
+   "summary": "Cover ends automatically if your Meridian Current Account Plus is closed or downgraded.",
+   "page": 4,
+   "quote": "3.2 Cover ends automatically when your Meridian Current Account Plus is closed or downgraded."
+  },
+  {
+   "summary": "A replacement gadget is only covered if you register it with the insurer within 30 days.",
+   "page": 4,
+   "quote": "3.3 You must register any replacement gadget with us within 30 days for it to be covered."
+  }
+ ],
+ "optional_extensions": [],
+ "missing_information": [],
+ "plain_english_summary": "This is gadget insurance that comes free with the Meridian Current Account Plus bank account, paid for through the GBP 18.00 monthly account fee. It covers your registered laptop and smartphone against theft, accidental damage and breakdown after the warranty ends, anywhere in the world, up to GBP 2,000 per gadget. You pay an excess of GBP 50 per laptop claim or GBP 75 per smartphone claim. Loss, cosmetic damage, theft of a gadget left unattended in public and theft not reported to police within 48 hours are not covered, and cover stops if you close or downgrade the account."
+}

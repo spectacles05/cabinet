@@ -1,0 +1,430 @@
+@import "tailwindcss";
+
+/* Cabinet design tokens: warm paper, deep ink, one brass accent. Light theme only for now. */
+:root {
+  --background: #f4f1ec;
+  --surface: #ffffff;
+  --foreground: #15171c;
+  --danger: #b42318;
+  --danger-soft: #fdecea;
+  --warn: #a85d00;
+
+  /* Cabinet identity: warm paper, deep ink, one brass accent */
+  --paper: #f4f1ec;
+  --paper-deep: #ebe5da;
+  --ink: #15171c;
+  --ink-soft: #5d626c;
+  --ink-faint: #8f939b;
+  --line: #e2ddd3;
+  --brass: #b5852f;
+  --brass-soft: #f4e8d0;
+  --ok: #2f7a4f;
+  --ok-soft: #e3f1e7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn: var(--warn);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.small-caps {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ───────────── Motion (subtle, and off for people who prefer reduced motion) ───────────── */
+
+@keyframes cab-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cab-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes cab-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.cab-rise {
+  animation: cab-rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.cab-grow {
+  transform-origin: left center;
+  animation: cab-grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.cab-float {
+  animation: cab-float 5s ease-in-out infinite;
+}
+
+@keyframes cab-toast {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  8%,
+  85% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.cab-toast {
+  animation: cab-toast 4.5s ease-out 0.3s both;
+}
+
+.cab-press {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.25s ease,
+    background-color 0.2s ease;
+}
+
+.cab-press:active {
+  transform: scale(0.98);
+}
+
+/* ───────────── Doodles: the Cabinet cast (one pen, one weight) ───────────── */
+
+.doodle {
+  fill: none;
+  stroke: var(--doodle-ink, var(--ink));
+  stroke-width: var(--doodle-w, 2.1);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  shape-rendering: geometricPrecision;
+  overflow: visible;
+}
+
+.doodle .ink {
+  fill: var(--doodle-ink, var(--ink));
+  stroke: none;
+}
+
+.doodle .paper {
+  fill: var(--doodle-paper, #fffdf9);
+}
+
+.doodle .paper-fill {
+  fill: var(--doodle-paper, #fffdf9);
+  stroke: none;
+}
+
+.doodle .wash {
+  fill: var(--doodle-wash, #e2ddd3);
+  stroke: none;
+}
+
+.doodle .faint {
+  stroke-width: calc(var(--doodle-w, 2.1) * 0.72);
+}
+
+.doodle .thick {
+  stroke-width: 5.5;
+}
+
+.doodle .dash {
+  stroke-dasharray: 2.5 5.5;
+}
+
+@keyframes doodle-wiggle {
+  0%,
+  80%,
+  100% {
+    transform: rotate(0);
+  }
+  85% {
+    transform: rotate(9deg);
+  }
+  90% {
+    transform: rotate(-3deg);
+  }
+  95% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes doodle-blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.12);
+  }
+}
+
+@keyframes doodle-peek {
+  from {
+    transform: translateY(72%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes doodle-sniff {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1.5px);
+  }
+}
+
+@keyframes doodle-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes doodle-flap-l {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+}
+
+@keyframes doodle-flap-r {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(9deg);
+  }
+}
+
+@keyframes doodle-scan {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-3px, 2px);
+  }
+}
+
+.doodle-wiggle {
+  transform-box: fill-box;
+  transform-origin: 20% 100%;
+  animation: doodle-wiggle 4.5s ease-in-out infinite;
+}
+
+.doodle-blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: doodle-blink 5s ease-in-out infinite;
+}
+
+.doodle-peek {
+  animation: doodle-peek 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s both;
+}
+
+.doodle-sniff {
+  animation: doodle-sniff 0.9s ease-in-out infinite;
+}
+
+.doodle-fade {
+  animation: doodle-fade 1.4s ease-in-out infinite;
+}
+
+.doodle-flap-l,
+.doodle-flap-r {
+  transform-box: fill-box;
+  animation: doodle-flap-l 0.9s ease-in-out infinite;
+}
+
+.doodle-flap-l {
+  transform-origin: 100% 100%;
+}
+
+.doodle-flap-r {
+  transform-origin: 0% 100%;
+  animation-name: doodle-flap-r;
+}
+
+.doodle-scan {
+  animation: doodle-scan 3.2s ease-in-out infinite;
+}
+
+/* Animals. Whole animals hop when tapped; peeking ones duck behind their edge and pop back up
+   (they're drawn against that edge, so they never rise above it). Each reaction has two
+   identical copies, alternated, so every tap replays it. */
+@keyframes cab-hop-a {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  35% {
+    transform: translateY(-7px) rotate(-4deg);
+  }
+  65% {
+    transform: translateY(-2px) rotate(3deg);
+  }
+}
+@keyframes cab-hop-b {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  35% {
+    transform: translateY(-7px) rotate(-4deg);
+  }
+  65% {
+    transform: translateY(-2px) rotate(3deg);
+  }
+}
+.cab-hop-a,
+.cab-hop-b {
+  transform-origin: 50% 100%;
+  animation: cab-hop-a 0.55s cubic-bezier(0.3, 0.7, 0.3, 1) both;
+}
+.cab-hop-b {
+  animation-name: cab-hop-b;
+}
+
+@keyframes cab-pop-a {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30%,
+  50% {
+    transform: translateY(62%);
+  }
+  78% {
+    transform: translateY(-3%);
+  }
+}
+@keyframes cab-pop-b {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30%,
+  50% {
+    transform: translateY(62%);
+  }
+  78% {
+    transform: translateY(-3%);
+  }
+}
+.cab-pop-a,
+.cab-pop-b {
+  animation: cab-pop-a 0.75s cubic-bezier(0.3, 0.7, 0.3, 1) both;
+}
+.cab-pop-b {
+  animation-name: cab-pop-b;
+}
+
+@keyframes cab-bubble {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.9);
+  }
+  12%,
+  85% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+}
+
+.cab-bubble {
+  animation: cab-bubble 2.4s ease-out both;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cab-rise,
+  .cab-grow,
+  .cab-float,
+  .cab-hop-a,
+  .cab-hop-b,
+  .cab-pop-a,
+  .cab-pop-b,
+  .doodle *,
+  .doodle-peek {
+    animation: none !important;
+  }
+  .cab-bubble {
+    animation: none !important;
+  }
+  .cab-press:active {
+    transform: none;
+  }
+}

@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1200" height="470" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <title>How every answer gets checked</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#15171c" />
+    </marker>
+    <style>
+      .h { font-size: 15px; font-weight: 700; fill: #15171c; }
+      .k { font-size: 11px; font-weight: 700; fill: #9c7212; letter-spacing: 1px; }
+      .s { font-size: 12px; fill: #3d424b; }
+      .n { font-size: 11px; fill: #4a4f58; }
+      .line { stroke: #15171c; stroke-width: 1.4; fill: none; }
+    </style>
+  </defs>
+  <rect width="1200" height="470" fill="#fbfaf7" />
+  <text x="30" y="38" style="font-size: 20px; font-weight: 700; fill: #15171c; font-family: Georgia, serif">How every answer gets checked</text>
+  <text x="30" y="58" class="n">Used for reading policies, Q&amp;A, Your Cover and claims. Claude suggests; our own code decides what is kept.</text>
+
+  <!-- 1 Scope -->
+  <rect x="30" y="86" width="208" height="196" rx="14" fill="#ffffff" stroke="#c9c2b4" />
+  <text x="46" y="110" class="k">1 · SCOPE</text>
+  <text x="46" y="134" class="h">The user's own data</text>
+  <text x="46" y="160" class="s">Session verified with</text>
+  <text x="46" y="176" class="s">Supabase Auth; every read</text>
+  <text x="46" y="192" class="s">runs as the user (RLS).</text>
+  <text x="46" y="216" class="s">Scope: one policy, the whole</text>
+  <text x="46" y="232" class="s">wallet, or one claim file's</text>
+  <text x="46" y="248" class="s">policy. Size and rate limits.</text>
+
+  <!-- 2 Retrieve -->
+  <rect x="270" y="86" width="208" height="196" rx="14" fill="#ffffff" stroke="#c9c2b4" />
+  <text x="286" y="110" class="k">2 · RETRIEVE</text>
+  <text x="286" y="134" class="h">Find the wording</text>
+  <text x="286" y="160" class="s">Question terms expanded with</text>
+  <text x="286" y="176" class="s">insurance synonyms, searched</text>
+  <text x="286" y="192" class="s">with Postgres full-text search</text>
+  <text x="286" y="208" class="s">over page-numbered chunks</text>
+  <text x="286" y="232" class="s">(top 12), plus the schedule</text>
+  <text x="286" y="248" class="s">pages that list add-ons.</text>
+
+  <!-- 3 Propose -->
+  <rect x="510" y="86" width="208" height="196" rx="14" fill="#fbf1dc" stroke="#9c7212" />
+  <text x="526" y="110" class="k">3 · PROPOSE</text>
+  <text x="526" y="134" class="h">Claude or rules</text>
+  <text x="526" y="160" class="s">Passages fenced as untrusted</text>
+  <text x="526" y="176" class="s">data. Fixed JSON schema, no</text>
+  <text x="526" y="192" class="s">tools. Each statement must</text>
+  <text x="526" y="208" class="s">carry a source id and an exact</text>
+  <text x="526" y="224" class="s">quote. Over budget or offline:</text>
+  <text x="526" y="240" class="s">rule-based engine instead.</text>
+
+  <!-- 4 Verify -->
+  <rect x="750" y="86" width="208" height="196" rx="14" fill="#e6f1e8" stroke="#2e7a4e" stroke-width="1.4" />
+  <text x="766" y="110" class="k" style="fill: #2e7a4e">4 · VERIFY</text>
+  <text x="766" y="134" class="h">Our code checks it</text>
+  <text x="766" y="160" class="s">Quote must appear in the</text>
+  <text x="766" y="176" class="s">cited passage / page, inside</text>
+  <text x="766" y="192" class="s">the scope. Values must be in</text>
+  <text x="766" y="208" class="s">their quote. Contacts and</text>
+  <text x="766" y="224" class="s">deadlines must be in verified</text>
+  <text x="766" y="240" class="s">wording. No promises.</text>
+
+  <!-- 5 Keep -->
+  <rect x="990" y="86" width="180" height="196" rx="14" fill="#ffffff" stroke="#c9c2b4" />
+  <text x="1006" y="110" class="k">5 · KEEP</text>
+  <text x="1006" y="134" class="h">Show and save</text>
+  <text x="1006" y="160" class="s">Only verified items,</text>
+  <text x="1006" y="176" class="s">with page links.</text>
+  <text x="1006" y="200" class="s">Saved as the user;</text>
+  <text x="1006" y="216" class="s">each step logged with</text>
+  <text x="1006" y="232" class="s">ids and counts only.</text>
+
+  <path d="M238 184 L268 184" class="line" marker-end="url(#arrow)" />
+  <path d="M478 184 L508 184" class="line" marker-end="url(#arrow)" />
+  <path d="M718 184 L748 184" class="line" marker-end="url(#arrow)" />
+  <path d="M958 184 L988 184" class="line" marker-end="url(#arrow)" />
+
+  <!-- Fail-safe branch -->
+  <path d="M854 282 L854 318" class="line" marker-end="url(#arrow)" />
+  <rect x="690" y="320" width="480" height="80" rx="12" fill="#fdecea" stroke="#b42318" />
+  <text x="706" y="343" class="h" style="font-size: 13.5px">Nothing verifiable is left</text>
+  <text x="706" y="363" class="s">Q&amp;A answers “I can't confirm this from your policy”.</text>
+  <text x="706" y="380" class="s">A claim verdict without confirmed wording becomes “unclear”.</text>
+
+  <!-- Per-workflow strip -->
+  <text x="30" y="344" class="k">WHERE IT RUNS</text>
+  <text x="30" y="366" class="s"><tspan font-weight="700">Extraction</tspan>: every field and list item; edited values are</text>
+  <text x="30" y="382" class="s">kept as the user's own statement, without evidence.</text>
+  <text x="30" y="404" class="s"><tspan font-weight="700">Q&amp;A</tspan>: citations; no valid citation means no verdict.</text>
+  <text x="30" y="426" class="s"><tspan font-weight="700">Your Cover</tspan>: findings cite verified wording.</text>
+  <text x="370" y="404" class="s"><tspan font-weight="700">Claims</tspan>: when shown, and again on Save.</text>
+  <text x="370" y="426" class="s"><tspan font-weight="700">Logs</tspan>: allowlisted keys, identifier-like values.</text>
+  <text x="30" y="456" class="n">Source: src/lib/evidence/verify.ts, src/lib/qa/verify-citations.ts, src/lib/claims/verify.ts, src/lib/extraction/verify-extraction.ts, src/lib/runs/logger.ts</text>
+</svg>

@@ -1,0 +1,86 @@
+Note: an earlier run on the same day failed. The local test server stopped responding after the policy-deletion step (the page showed "This page couldn't load", then connections were refused), so both tests failed. No server output was captured at the time, so the cause wasn't identified; playwright.config.ts now pipes the server's output for future runs. This rerun, with no code changes, passed.
+
+Cabinet: npm run test:e2e (production build, then Playwright in Microsoft Edge, Demo Mode, Anthropic trap server)
+Run on 2026-10-16 13:45 UTC, Node v24.15.0
+
+
+> cabinet@0.1.0 test:e2e
+> next build && playwright test
+
+▲ Next.js 16.4.0 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 35ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1349ms
+  Running TypeScript ...
+  Finished TypeScript in 3.0s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/30) ...
+  Generating static pages using 11 workers (7/30) 
+  Generating static pages using 11 workers (14/30) 
+  Generating static pages using 11 workers (22/30) 
+✓ Generating static pages using 11 workers (30/30) in 374ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/actions/[id]
+├ ƒ /api/audit
+├ ƒ /api/claims
+├ ƒ /api/claims/[id]
+├ ƒ /api/claims/[id]/evidence
+├ ƒ /api/claims/[id]/evidence/[eid]
+├ ƒ /api/claims/[id]/evidence/[eid]/file
+├ ƒ /api/claims/[id]/recheck
+├ ƒ /api/claims/check
+├ ƒ /api/claims/start
+├ ƒ /api/demo/reset
+├ ƒ /api/documents
+├ ƒ /api/documents/[id]
+├ ƒ /api/documents/[id]/confirm
+├ ƒ /api/documents/[id]/extract
+├ ƒ /api/documents/[id]/file
+├ ƒ /api/documents/[id]/process
+├ ƒ /api/insights/[id]
+├ ƒ /api/insights/[id]/action
+├ ƒ /api/mode
+├ ƒ /api/policies/[id]
+├ ƒ /api/policies/[id]/documents
+├ ƒ /api/qa
+├ ƒ /api/runs/export
+├ ƒ /app
+├ ƒ /app/ask
+├ ƒ /app/claims
+├ ƒ /app/claims/[id]
+├ ƒ /app/claims/new
+├ ƒ /app/documents/[id]/review
+├ ƒ /app/notifications
+├ ƒ /app/policies/[id]
+├ ƒ /app/profile
+├ ƒ /app/review
+├ ƒ /app/runs
+├ ƒ /app/upload
+├ ○ /apple-icon.png
+├ ƒ /auth/signout
+├ ƒ /contact
+├ ƒ /faq
+├ ○ /icon.svg
+├ ○ /login
+├ ƒ /privacy
+└ ƒ /terms
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+Running 2 tests using 1 worker
+
+  ok 1 e2e\demo.spec.ts:41:5 › judging demo in Demo Mode: upload → wallet → edit → ask → review → task → logs → delete → reset (1.2m)
+  ok 2 e2e\security-headers.spec.ts:4:5 › pages and API responses carry the security headers (41ms)
+
+  2 passed (1.3m)

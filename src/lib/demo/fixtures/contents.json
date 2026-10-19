@@ -1,0 +1,214 @@
+{
+ "policy_type": "contents",
+ "policy_type_evidence": {
+  "page": 1,
+  "quote": "Product Student Contents Insurance"
+ },
+ "fields": {
+  "insurer": {
+   "value": "Kestrel Home Insurance (Fictional) plc",
+   "status": "found",
+   "page": 1,
+   "quote": "Insurer Kestrel Home Insurance (Fictional) plc",
+   "note": null
+  },
+  "display_name": {
+   "value": "Student Contents Insurance",
+   "status": "found",
+   "page": 1,
+   "quote": "Product Student Contents Insurance",
+   "note": null
+  },
+  "policy_number": {
+   "value": "KHC-7731-0092",
+   "status": "found",
+   "page": 1,
+   "quote": "Policy number KHC-7731-0092",
+   "note": null
+  },
+  "insured": {
+   "value": "Alex Sample",
+   "status": "found",
+   "page": 1,
+   "quote": "Policyholder Alex Sample",
+   "note": null
+  },
+  "start_date": {
+   "value": "2026-09-15",
+   "status": "found",
+   "page": 1,
+   "quote": "Period of insurance 15 September 2026 to 14 September 2027",
+   "note": null
+  },
+  "end_date": {
+   "value": "2027-09-14",
+   "status": "found",
+   "page": 1,
+   "quote": "Period of insurance 15 September 2026 to 14 September 2027",
+   "note": null
+  },
+  "renewal_date": {
+   "value": "2027-09-15",
+   "status": "found",
+   "page": 1,
+   "quote": "Renewal date 15 September 2027",
+   "note": null
+  },
+  "premium_amount": {
+   "value": 8.5,
+   "status": "found",
+   "page": 1,
+   "quote": "Premium GBP 8.50 per month (12 monthly payments)",
+   "note": null
+  },
+  "premium_frequency": {
+   "value": "monthly",
+   "status": "found",
+   "page": 1,
+   "quote": "Premium GBP 8.50 per month (12 monthly payments)",
+   "note": null
+  },
+  "currency": {
+   "value": "GBP",
+   "status": "found",
+   "page": 1,
+   "quote": "Premium GBP 8.50 per month (12 monthly payments)",
+   "note": null
+  },
+  "excess_amount": {
+   "value": 100,
+   "status": "found",
+   "page": 1,
+   "quote": "Standard excess GBP 100 per claim",
+   "note": null
+  }
+ },
+ "limits": [
+  {
+   "label": "Contents sum insured (the most paid for all your contents)",
+   "amount": 6000,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "Contents sum insured GBP 6,000"
+  },
+  {
+   "label": "Single article limit (the most paid for any one item, including laptops)",
+   "amount": 1500,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "Single article limit GBP 1,500"
+  },
+  {
+   "label": "Standard excess you pay on each claim",
+   "amount": 100,
+   "currency": "GBP",
+   "page": 1,
+   "quote": "Standard excess GBP 100 per claim"
+  },
+  {
+   "label": "Administration charge if you cancel after the 14-day cooling-off period",
+   "amount": 15,
+   "currency": "GBP",
+   "page": 5,
+   "quote": "premium for the unexpired period less an administration charge of GBP 15."
+  }
+ ],
+ "inclusions": [
+  {
+   "summary": "Contents inside your home are covered against fire, smoke, explosion, lightning, storm, flood, escape of water, theft or attempted theft, and vandalism.",
+   "page": 2,
+   "quote": "We will cover your contents while they are inside your home against loss or damage caused by fire,"
+  },
+  {
+   "summary": "Accidental damage to contents inside your home is included, covering items such as laptops, tablets, TVs and games consoles.",
+   "page": 2,
+   "quote": "to your contents while inside your home, including laptops, tablets, televisions and games consoles."
+  },
+  {
+   "summary": "Laptops and computers at home are covered up to GBP 1,500 per item, minus the excess.",
+   "page": 2,
+   "quote": "A3 Laptops and computers in your home are covered up to the single article limit of GBP 1,500 for each item,"
+  }
+ ],
+ "exclusions": [
+  {
+   "summary": "Theft from your home is only covered if there is evidence of forced and violent entry or exit.",
+   "page": 2,
+   "quote": "A4 Theft from your home is only covered if there is evidence of forcible and violent entry to, or exit from, your"
+  },
+  {
+   "summary": "Contents away from your home are not covered unless Personal Possessions cover applies under Endorsement Schedule PP1.",
+   "page": 3,
+   "quote": "B1 Loss or damage to contents while they are away from your home, unless Personal Possessions cover"
+  },
+  {
+   "summary": "Mechanical or electrical breakdown, wear and tear, and damage by insects, vermin or pets are not covered.",
+   "page": 3,
+   "quote": "B2 Mechanical or electrical breakdown, wear and tear, or damage caused by insects, vermin or pets."
+  },
+  {
+   "summary": "Theft from shared parts of your home (e.g. shared kitchen or hallway) is not covered unless there was forced and violent entry.",
+   "page": 3,
+   "quote": "B3 Theft or attempted theft from any part of your home shared with other people, unless there is evidence of"
+  },
+  {
+   "summary": "No cover for loss or damage while your home is left empty for more than 60 days in a row (e.g. over summer holidays).",
+   "page": 3,
+   "quote": "B4 Loss or damage while your home is left unoccupied for more than 60 consecutive days."
+  },
+  {
+   "summary": "Bicycles are not covered unless specified in Endorsement Schedule PP1.",
+   "page": 3,
+   "quote": "B5 Bicycles, unless specified in Endorsement Schedule PP1."
+  },
+  {
+   "summary": "Under Personal Possessions cover, items left unattended in a public place are not covered.",
+   "page": 4,
+   "quote": "C2 Items left unattended in a public place are not covered."
+  }
+ ],
+ "conditions": [
+  {
+   "summary": "You must report any theft to the police within 24 hours and get a crime reference number.",
+   "page": 5,
+   "quote": "D1 You must report any theft to the police within 24 hours and obtain a crime reference number."
+  },
+  {
+   "summary": "If another policy also covers the loss, this insurer only pays its proportionate share.",
+   "page": 5,
+   "quote": "D2 Other insurance. If any loss or damage is also covered by another insurance policy, we will only pay our"
+  },
+  {
+   "summary": "You can cancel at any time; after the 14-day cooling-off period you get a refund for the unused period minus a GBP 15 charge.",
+   "page": 5,
+   "quote": "D3 You may cancel this policy at any time. If you cancel after the 14-day cooling-off period, we will refund the"
+  },
+  {
+   "summary": "The standard excess applies to each Personal Possessions claim.",
+   "page": 4,
+   "quote": "C3 The standard excess applies to each claim under this extension."
+  }
+ ],
+ "optional_extensions": [
+  {
+   "name": "Personal Possessions (away from home) extension — covers listed items against loss, theft and accidental damage anywhere in the UK, but only if confirmed in Endorsement Schedule PP1, which is not included in this document.",
+   "status": "referenced_not_provided",
+   "page": 1,
+   "quote": "Personal Possessions (away from home) See Endorsement Schedule PP1"
+  },
+  {
+   "name": "Accidental damage (home) — shown as included in the schedule.",
+   "status": "purchased",
+   "page": 1,
+   "quote": "Accidental damage (home) INCLUDED"
+  }
+ ],
+ "missing_information": [
+  {
+   "description": "Endorsement Schedule PP1 is issued separately and is not in this document, so it is unclear which items (if any) are covered away from home and what limits apply.",
+   "page": 1,
+   "quote": "Endorsement Schedule PP1 is issued as a separate document."
+  }
+ ],
+ "plain_english_summary": "This is a student contents policy from Kestrel Home Insurance (Fictional) covering your belongings inside your flat against events like fire, flood, theft and vandalism, plus accidental damage, up to GBP 6,000 in total and GBP 1,500 per item. You pay GBP 8.50 a month and the first GBP 100 of each claim. Theft is only covered if there was forced and violent entry, and nothing is covered if the flat is empty for more than 60 days in a row. Cover for items away from home and bicycles depends on a separate Endorsement Schedule PP1 that is not included in this document."
+}
